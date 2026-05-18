@@ -1,0 +1,87 @@
+Bài tập 1: Lý thuyết tổng quan về Web Service và định dạng dữ liệu
+Câu 1: Khái niệm Web Service
+
+Web Service là một hệ thống cho phép các ứng dụng khác nhau giao tiếp và trao đổi dữ liệu với nhau thông qua mạng Internet hoặc mạng nội bộ bằng các giao thức chuẩn như HTTP.
+
+Web Service giúp các hệ thống được viết bằng các ngôn ngữ lập trình khác nhau vẫn có thể kết nối và trao đổi dữ liệu với nhau.
+
+Ví dụ thực tế
+Ứng dụng mobile ngân hàng gọi API để lấy thông tin tài khoản.
+Website bán hàng gọi API thanh toán của MoMo hoặc VNPay.
+Ứng dụng thời tiết lấy dữ liệu từ Weather API.
+
+Ví dụ:
+
+GET https://api.weather.com/current
+
+API sẽ trả về dữ liệu thời tiết dưới dạng JSON hoặc XML.
+
+Câu 2: Bảng so sánh SOAP và REST
+| Tiêu chí | SOAP | REST |
+|---|---|---|
+| Giao thức truyền tải | HTTP, SMTP, FTP,... | Chủ yếu HTTP |
+| Định dạng dữ liệu chính | XML | JSON, XML |
+| Trạng thái (stateful/stateless) | Stateful hoặc Stateless | Stateless |
+| Tính dễ dàng triển khai | Phức tạp hơn | Đơn giản hơn |
+| Hiệu suất | Chậm hơn do XML nặng | Nhanh hơn |
+| Bảo mật | WS-Security mạnh | HTTPS, JWT, OAuth2 |
+| Khả năng mở rộng | Khó hơn | Dễ scale hơn |
+| Phù hợp | Hệ thống doanh nghiệp lớn | Mobile, Web, Microservices |
+Câu 3: Chuyển JSON sang XML
+JSON
+{
+  "student": {
+    "id": 1,
+    "name": "Nguyen Van A",
+    "email": "a@gmail.com"
+  }
+}
+XML tương ứng
+<student>
+    <id>1</id>
+    <name>Nguyen Van A</name>
+    <email>a@gmail.com</email>
+</student>
+Câu 4: Ưu điểm của JSON so với XML
+1. JSON nhẹ hơn XML
+
+JSON có cú pháp ngắn gọn hơn XML nên:
+
+giảm kích thước dữ liệu
+tiết kiệm bandwidth
+truyền tải nhanh hơn
+
+Ví dụ JSON:
+
+{
+  "name": "An"
+}
+
+Ngắn gọn hơn XML:
+
+<name>An</name>
+2. JSON xử lý nhanh hơn
+
+JSON dễ parse hơn XML nên:
+
+tốc độ xử lý nhanh hơn
+hiệu suất tốt hơn cho Web Service
+
+Đặc biệt phù hợp với:
+
+mobile app
+web app
+REST API
+3. JSON dễ đọc và dễ sử dụng
+
+JSON gần giống object trong JavaScript nên:
+
+frontend xử lý dễ dàng
+code ngắn gọn hơn XML
+4. JSON được hỗ trợ rộng rãi trong REST API
+
+Hầu hết các RESTful Web Service hiện nay đều sử dụng JSON vì:
+
+nhanh
+đơn giản
+dễ tích hợp frontend/mobile.
